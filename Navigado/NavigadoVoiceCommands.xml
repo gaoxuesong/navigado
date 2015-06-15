@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
+  <CommandSet xml:lang="en-us" Name="Navigado">
+    <CommandPrefix> Navigation, </CommandPrefix>
+    <Example> Where is my car </Example>
+
+    <Command Name="whereIsMyCar">
+      <Example> Where is my car </Example>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase"> where is [my] car in {destination} </ListenFor>
+      <ListenFor RequireAppName="ExplicitlySpecified"> where is [my] {builtin:AppName} car in {destination} </ListenFor>
+      <Feedback> Where is my car {destination} </Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <PhraseList Label="destination">
+      <Item>Seattle</Item>
+      <Item>Space Needle</Item>
+    </PhraseList>
+  </CommandSet>
+
+</VoiceCommands>
